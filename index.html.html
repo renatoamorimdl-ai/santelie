@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santeliê — Dr. Leonardo Ortigoza · Reabilitação Oral</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Jost',Georgia,serif;background:#fff;color:#0c0c0c;overflow-x:hidden}
+
+:root{
+  --black:#0c0c0c;
+  --offwhite:#dddad6;
+  --gray:#888;
+  --lightbg:#f5f3f0;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:2rem 5%;transition:padding .4s,background .4s}
+nav.s{padding:1.2rem 5%;background:rgba(12,12,12,.95);backdrop-filter:blur(8px)}
+.nav-logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:#fff;text-decoration:none;font-weight:300}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;font-weight:300;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-btn{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#fff;text-decoration:none;font-weight:400;border:1px solid rgba(255,255,255,.5);padding:.55rem 1.4rem;transition:all .3s}
+.nav-btn:hover{background:#fff;color:#0c0c0c}
+
+/* HERO */
+#hero{height:100vh;background:#0c0c0c;display:flex;align-items:flex-end;padding:0 5% 5rem;position:relative;overflow:hidden}
+.hero-ghost{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(7rem,18vw,20rem);font-weight:300;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.05);white-space:nowrap;pointer-events:none;letter-spacing:-.02em;user-select:none;transition:transform .1s linear}
+.hero-body{position:relative;z-index:2;max-width:700px}
+.hero-eye{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:#888;font-weight:300;margin-bottom:1.5rem}
+.hero-h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(3rem,7vw,7.5rem);font-weight:300;line-height:.95;color:#dddad6;letter-spacing:-.02em}
+.hero-h1 em{font-style:italic;color:#c7c7c7}
+.hero-sub{font-size:.78rem;line-height:1.9;color:#666;font-weight:300;margin-top:1.8rem;max-width:340px}
+.hero-scroll{position:absolute;right:5%;bottom:5rem;display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.hero-scroll span{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:#555;writing-mode:vertical-rl}
+.scroll-bar{width:1px;height:50px;background:#444;transform-origin:top;animation:sb 2s var(--ease) infinite}
+@keyframes sb{0%{transform:scaleY(0);opacity:0;transform-origin:top}50%{transform:scaleY(1);opacity:1}100%{transform:scaleY(0);opacity:0;transform-origin:bottom}}
+
+/* LABEL */
+.lbl{font-size:.63rem;letter-spacing:.35em;text-transform:uppercase;color:#999;font-weight:400;margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem}
+.lbl::before{content:'';display:block;width:2rem;height:1px;background:#ccc;flex-shrink:0}
+
+/* SOBRE */
+#sobre{background:var(--lightbg);padding:9rem 5%;display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center}
+.sobre-h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.2rem,3.5vw,4rem);font-weight:300;line-height:1.1;color:#0c0c0c;letter-spacing:-.01em;margin-bottom:2rem}
+.sobre-h2 em{font-style:italic}
+.sobre-p{font-size:.88rem;line-height:1.9;color:#444;font-weight:300;margin-bottom:1.2rem}
+.creds{display:flex;flex-direction:column;gap:.5rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(0,0,0,.1)}
+.cred{font-size:.72rem;letter-spacing:.08em;color:#555;font-weight:300;display:flex;align-items:center;gap:.8rem}
+.cred::before{content:'';width:4px;height:4px;border-radius:50%;background:#0c0c0c;flex-shrink:0}
+.sobre-frame{width:100%;aspect-ratio:3/4;background:#1a1a1a;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.frame-svg{opacity:.1}
+.frame-tag{position:absolute;bottom:-1px;left:-2.5rem;background:#fff;padding:1.4rem 1.8rem}
+.tag-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.2rem;font-weight:300;line-height:1;color:#0c0c0c}
+.tag-l{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#999;font-weight:300;margin-top:.2rem}
+
+/* DIFERENCIAIS */
+#diferenciais{background:#0c0c0c;padding:9rem 5%}
+#diferenciais .lbl::before{background:#555}
+.dif-head{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem}
+.dif-h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.2rem,3.5vw,4rem);font-weight:300;line-height:1.1;color:#dddad6;letter-spacing:-.01em}
+.dif-h2 em{font-style:italic;color:#888}
+.dif-p{font-size:.88rem;line-height:1.9;color:#666;font-weight:300}
+.dif-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.08)}
+.dif-item{padding:3rem 1.8rem;border-right:1px solid rgba(255,255,255,.08);transition:background .4s}
+.dif-item:last-child{border-right:none}
+.dif-item:hover{background:rgba(255,255,255,.03)}
+.dif-n{font-size:.7rem;letter-spacing:.2em;color:rgba(255,255,255,.18);margin-bottom:1.8rem;font-weight:300}
+.dif-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;font-weight:400;color:#dddad6;margin-bottom:.8rem;line-height:1.2}
+.dif-desc{font-size:.76rem;line-height:1.8;color:#666;font-weight:300}
+
+/* SERVIÇOS */
+#servicos{background:#fff;padding:9rem 5%}
+.srv-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem}
+.srv-h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.2rem,3.5vw,4rem);font-weight:300;line-height:1.1;color:#0c0c0c;letter-spacing:-.01em}
+.srv-h2 em{font-style:italic}
+.srv-list{border-top:1px solid rgba(0,0,0,.1)}
+.srv-row{display:grid;grid-template-columns:3.5rem 1fr 2fr 2rem;gap:2rem;align-items:center;padding:2.2rem 0;border-bottom:1px solid rgba(0,0,0,.07);cursor:default;position:relative;overflow:hidden;transition:padding .3s}
+.srv-row::after{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:var(--lightbg);transition:width .4s var(--ease);z-index:0}
+.srv-row:hover::after{width:100%}
+.srv-row>*{position:relative;z-index:1}
+.srv-num{font-size:.72rem;letter-spacing:.15em;color:#bbb;font-weight:300}
+.srv-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;font-weight:400;color:#0c0c0c}
+.srv-desc{font-size:.78rem;line-height:1.8;color:#666;font-weight:300}
+.srv-arr{color:#bbb;font-size:1.1rem;transition:transform .3s,color .3s;text-align:right}
+.srv-row:hover .srv-arr{transform:translateX(5px);color:#0c0c0c}
+
+/* GALERIA */
+#galeria{background:var(--lightbg);padding:9rem 5%}
+.gal-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem}
+.gal-h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.2rem,3.5vw,4rem);font-weight:300;line-height:1.1;color:#0c0c0c;letter-spacing:-.01em}
+.gal-h2 em{font-style:italic}
+.gal-filters{display:flex;gap:2rem}
+.fil{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#aaa;background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-weight:300;transition:color .2s;padding:0}
+.fil.on{color:#0c0c0c}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(0,0,0,.06)}
+.gal-item{background:#fff;position:relative;overflow:hidden}
+.gal-item:first-child{grid-column:span 2;aspect-ratio:2/1}
+.gal-item:not(:first-child){aspect-ratio:1}
+.gal-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:transform .6s var(--ease)}
+.gal-item:hover .gal-bg{transform:scale(1.04)}
+.gal-bg-1{background:#111}
+.gal-bg-2{background:#1a1a1a}
+.gal-bg-3{background:#0f0f0f}
+.gal-bg-4{background:#161616}
+.gal-bg-5{background:#131313}
+.gal-lbl{font-family:'Cormorant Garamond',Georgia,serif;font-size:.8rem;letter-spacing:.3em;color:rgba(221,218,214,.12);text-transform:uppercase}
+.gal-ov{position:absolute;inset:0;background:rgba(0,0,0,0);display:flex;align-items:flex-end;padding:1.2rem;transition:background .35s;z-index:1}
+.gal-item:hover .gal-ov{background:rgba(0,0,0,.45)}
+.gal-ov-txt{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:#dddad6;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s;font-weight:300}
+.gal-item:hover .gal-ov-txt{opacity:1;transform:translateY(0)}
+.gal-note{margin-top:1.8rem;font-size:.73rem;color:#aaa;font-weight:300;font-style:italic;text-align:center}
+
+/* AGENDAMENTO */
+#agendamento{background:#0c0c0c;padding:9rem 5%;display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:start}
+#agendamento .lbl::before{background:#444}
+.ag-h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.2rem,3.5vw,4rem);font-weight:300;line-height:1.1;color:#dddad6;letter-spacing:-.01em;margin-bottom:1.8rem}
+.ag-h2 em{font-style:italic;color:#888}
+.ag-p{font-size:.88rem;line-height:1.9;color:#666;font-weight:300;margin-bottom:2.5rem}
+.contacts{display:flex;flex-direction:column;gap:.9rem}
+.cl{display:flex;align-items:center;gap:1rem;text-decoration:none;color:#888;transition:color .2s}
+.cl:hover{color:#dddad6}
+.cl-type{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.25);width:2.8rem;flex-shrink:0;font-weight:300}
+.cl-val{font-size:.8rem;font-weight:300}
+
+/* FORM */
+.form{display:flex;flex-direction:column}
+.frow{display:grid;grid-template-columns:1fr 1fr}
+.fg{position:relative;border-bottom:1px solid rgba(255,255,255,.1);border-right:1px solid rgba(255,255,255,.06)}
+.fg:last-child,.fg.full{border-right:none}
+.fg.full{grid-column:span 2}
+.fl{position:absolute;top:1.1rem;left:1.2rem;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);pointer-events:none;transition:all .22s;font-family:'Jost',sans-serif;font-weight:300}
+.fi{width:100%;padding:1.9rem 1.2rem .7rem;background:transparent;border:none;outline:none;color:#dddad6;font-size:.9rem;font-family:'Jost',sans-serif;font-weight:300;caret-color:#dddad6}
+.fi::placeholder{color:transparent}
+.fi:focus~.fl,.fi:not(:placeholder-shown)~.fl{top:.5rem;font-size:.52rem;color:rgba(255,255,255,.5)}
+.fsel{width:100%;padding:1.9rem 1.2rem .7rem;background:transparent;border:none;outline:none;color:#dddad6;font-size:.9rem;font-family:'Jost',sans-serif;font-weight:300;appearance:none;cursor:pointer}
+.fsel option{background:#0c0c0c;color:#dddad6}
+.fta{width:100%;padding:1.9rem 1.2rem .7rem;background:transparent;border:none;outline:none;color:#dddad6;font-size:.9rem;font-family:'Jost',sans-serif;font-weight:300;resize:none;min-height:90px;caret-color:#dddad6}
+.fta::placeholder{color:transparent}
+.fta:focus~.fl,.fta:not(:placeholder-shown)~.fl{top:.5rem;font-size:.52rem;color:rgba(255,255,255,.5)}
+.fsubrow{display:flex;justify-content:flex-end;margin-top:2.2rem}
+.fsub{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:#0c0c0c;background:#dddad6;border:none;padding:1.1rem 2.8rem;cursor:pointer;font-weight:400;transition:background .3s,transform .3s}
+.fsub:hover{background:#fff;transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:#0c0c0c;border-top:1px solid rgba(255,255,255,.07);padding:2.5rem 5%;display:flex;justify-content:space-between;align-items:center}
+.ft-brand{font-family:'Cormorant Garamond',Georgia,serif;font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.25);font-weight:300}
+.ft-copy{font-size:.62rem;color:rgba(255,255,255,.18);letter-spacing:.1em}
+.ft-cro{font-size:.62rem;color:rgba(255,255,255,.18);letter-spacing:.15em;text-transform:uppercase}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.rv.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:1.2rem 5%}
+  .nav-links{display:none}
+  #sobre{grid-template-columns:1fr;gap:3.5rem;padding:6rem 5%}
+  .frame-tag{left:0}
+  #diferenciais{padding:6rem 5%}
+  .dif-head{grid-template-columns:1fr;gap:1.5rem}
+  .dif-grid{grid-template-columns:1fr 1fr}
+  #servicos{padding:6rem 5%}
+  .srv-row{grid-template-columns:3rem 1fr 1.5rem;gap:1rem}
+  .srv-desc{display:none}
+  #galeria{padding:6rem 5%}
+  .gal-head{flex-direction:column;align-items:flex-start;gap:1.2rem}
+  .gal-grid{grid-template-columns:1fr 1fr}
+  #agendamento{grid-template-columns:1fr;gap:4rem;padding:6rem 5%}
+  footer{flex-direction:column;gap:.8rem;padding:2rem 5%;text-align:center}
+}
+@media(max-width:600px){
+  .dif-grid{grid-template-columns:1fr}
+  .dif-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
+  .frow{grid-template-columns:1fr}
+  .fg.full{grid-column:span 1}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#hero" class="nav-logo">Santeliê</a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#agendamento">Contato</a></li>
+  </ul>
+  <a href="#agendamento" class="nav-btn">Agendar</a>
+</nav>
+
+<section id="hero">
+  <div class="hero-ghost" id="hg">Santeliê</div>
+  <div class="hero-body">
+    <p class="hero-eye">Dr. Leonardo Ortigoza &middot; CRO/PE 11.348</p>
+    <h1 class="hero-h1">Reabilitação<br><em>Oral de</em><br>Alto Padrão</h1>
+    <p class="hero-sub">Odontologia que transforma sorrisos e restaura a confiança de viver plenamente.</p>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-bar"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="rv">
+    <p class="lbl">Sobre</p>
+    <h2 class="sobre-h2">Reconhecemos<br><em>o valor de cada</em><br>sorriso</h2>
+    <p class="sobre-p">A Santeliê é a clínica do Dr. Leonardo Ortigoza — Cirurgião-Dentista formado pela Universidade de Pernambuco, Mestre em Dentística com ênfase em Cerâmicas Odontológicas e Especialista em Periodontia e Implantodontia.</p>
+    <p class="sobre-p">Fundada em 2015 no coração de Recife, a clínica nasce de uma convicção: odontologia feita para durar e transformar. Cada tratamento é um compromisso com a vida e com a certeza de que seu sorriso importa.</p>
+    <div class="creds">
+      <div class="cred">Especialista em Periodontia e Implantodontia</div>
+      <div class="cred">Mestre em Cerâmicas Odontológicas — UPE</div>
+      <div class="cred">Laboratório de Prótese Próprio In-House</div>
+      <div class="cred">R. Comendador Bento Aguiar, 114 — Madalena, Recife/PE</div>
+    </div>
+  </div>
+  <div class="rv d2">
+    <div class="sobre-frame">
+      <svg class="frame-svg" width="70" height="90" viewBox="0 0 70 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="35" cy="45" rx="25" ry="35" stroke="#dddad6" stroke-width="1"/>
+        <line x1="35" y1="10" x2="35" y2="80" stroke="#dddad6" stroke-width="1"/>
+        <line x1="29" y1="13" x2="29" y2="77" stroke="#dddad6" stroke-width=".5"/>
+        <line x1="41" y1="13" x2="41" y2="77" stroke="#dddad6" stroke-width=".5"/>
+      </svg>
+      <div class="frame-tag">
+        <div class="tag-n">2015</div>
+        <div class="tag-l">Estd. Recife, PE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="diferenciais">
+  <div class="dif-head">
+    <div class="rv">
+      <p class="lbl" style="--c:rgba(255,255,255,.18)">Diferenciais</p>
+      <h2 class="dif-h2">Uma experiência<br><em>além do consultório</em></h2>
+    </div>
+    <p class="dif-p rv d2">Cada detalhe da Santeliê foi pensado para que o paciente sinta que está sendo cuidado — não apenas tratado.</p>
+  </div>
+  <div class="dif-grid">
+    <div class="dif-item rv">
+      <div class="dif-n">01</div>
+      <h3 class="dif-name">Laboratório Próprio</h3>
+      <p class="dif-desc">Próteses produzidas in-house com controle total de qualidade e tempo reduzido de tratamento.</p>
+    </div>
+    <div class="dif-item rv d1">
+      <div class="dif-n">02</div>
+      <h3 class="dif-name">Cadeira de Massagem</h3>
+      <p class="dif-desc">Ambiente projetado para relaxamento. Sua experiência começa antes mesmo do atendimento.</p>
+    </div>
+    <div class="dif-item rv d2">
+      <div class="dif-n">03</div>
+      <h3 class="dif-name">Santeliê Dental Class</h3>
+      <p class="dif-desc">Plataforma educacional exclusiva onde pacientes acessam conteúdo sobre seus tratamentos.</p>
+    </div>
+    <div class="dif-item rv d3">
+      <div class="dif-n">04</div>
+      <h3 class="dif-name">Protocolo Individual</h3>
+      <p class="dif-desc">Cada paciente tem um plano único. Seu histórico, suas preferências, seu ritmo de tratamento.</p>
+    </div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="srv-head">
+    <div class="rv">
+      <p class="lbl">Especialidades</p>
+      <h2 class="srv-h2">O que<br><em>transformamos</em></h2>
+    </div>
+  </div>
+  <div class="srv-list">
+    <div class="srv-row rv"><span class="srv-num">01</span><span class="srv-name">Implantes Dentários</span><span class="srv-desc">Reposição definitiva com osseointegração de alta precisão. Protocolos imediatos disponíveis.</span><span class="srv-arr">&#8594;</span></div>
+    <div class="srv-row rv d1"><span class="srv-num">02</span><span class="srv-name">Facetas &amp; Lentes de Contato</span><span class="srv-desc">Cerâmicas ultrafinas que transformam a estética com preservação máxima do dente natural.</span><span class="srv-arr">&#8594;</span></div>
+    <div class="srv-row rv d2"><span class="srv-num">03</span><span class="srv-name">Invisalign</span><span class="srv-desc">Alinhamento ortodôntico discreto com alinhadores transparentes personalizados digitalmente.</span><span class="srv-arr">&#8594;</span></div>
+    <div class="srv-row rv"><span class="srv-num">04</span><span class="srv-name">Reabilitação Oral Total</span><span class="srv-desc">Reconstrução completa da função mastigatória e estética para casos complexos.</span><span class="srv-arr">&#8594;</span></div>
+    <div class="srv-row rv d1"><span class="srv-num">05</span><span class="srv-name">Periodontia</span><span class="srv-desc">Tratamento e prevenção de doenças periodontais — a base que sustenta qualquer resultado estético.</span><span class="srv-arr">&#8594;</span></div>
+    <div class="srv-row rv d2"><span class="srv-num">06</span><span class="srv-name">Próteses Cerâmicas</span><span class="srv-desc">Coroas e próteses produzidas no laboratório in-house com precisão e agilidade.</span><span class="srv-arr">&#8594;</span></div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="gal-head">
+    <div class="rv">
+      <p class="lbl">Galeria</p>
+      <h2 class="gal-h2">Resultados que<br><em>falam por si</em></h2>
+    </div>
+    <div class="gal-filters rv d2">
+      <button class="fil on">Todos</button>
+      <button class="fil">Implantes</button>
+      <button class="fil">Estética</button>
+      <button class="fil">Reabilitação</button>
+    </div>
+  </div>
+  <div class="gal-grid rv">
+    <div class="gal-item"><div class="gal-bg gal-bg-1"><span class="gal-lbl">Santeliê</span></div><div class="gal-ov"><span class="gal-ov-txt">Adicione foto aqui</span></div></div>
+    <div class="gal-item"><div class="gal-bg gal-bg-2"><span class="gal-lbl">01</span></div><div class="gal-ov"><span class="gal-ov-txt">Caso clínico</span></div></div>
+    <div class="gal-item"><div class="gal-bg gal-bg-3"><span class="gal-lbl">02</span></div><div class="gal-ov"><span class="gal-ov-txt">Caso clínico</span></div></div>
+    <div class="gal-item"><div class="gal-bg gal-bg-4"><span class="gal-lbl">03</span></div><div class="gal-ov"><span class="gal-ov-txt">Caso clínico</span></div></div>
+    <div class="gal-item"><div class="gal-bg gal-bg-5"><span class="gal-lbl">04</span></div><div class="gal-ov"><span class="gal-ov-txt">Caso clínico</span></div></div>
+  </div>
+  <p class="gal-note">Substitua os placeholders pelas fotos reais dos casos clínicos do Dr. Leonardo</p>
+</section>
+
+<section id="agendamento">
+  <div class="rv">
+    <p class="lbl">Contato</p>
+    <h2 class="ag-h2">Agende sua<br><em>consulta</em></h2>
+    <p class="ag-p">Reconhecemos o valor de cada sorriso. Entre em contato e dê o primeiro passo para a transformação que você merece.</p>
+    <div class="contacts">
+      <a href="tel:+558198421313" class="cl"><span class="cl-type">Tel.</span><span class="cl-val">(81) 9 8842-1313</span></a>
+      <a href="https://instagram.com/dr.leoortigoza" class="cl" target="_blank"><span class="cl-type">IG</span><span class="cl-val">@dr.leoortigoza</span></a>
+      <a href="#" class="cl"><span class="cl-type">End.</span><span class="cl-val">R. Comendador Bento Aguiar, 114 — Madalena, Recife/PE</span></a>
+    </div>
+  </div>
+  <div class="rv d2">
+    <form class="form" onsubmit="send(event)">
+      <div class="frow">
+        <div class="fg"><input class="fi" id="nome" type="text" placeholder=" " required><label class="fl" for="nome">Nome completo</label></div>
+        <div class="fg"><input class="fi" id="tel" type="tel" placeholder=" " required><label class="fl" for="tel">WhatsApp</label></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><input class="fi" id="email" type="email" placeholder=" "><label class="fl" for="email">E-mail</label></div>
+        <div class="fg" style="position:relative">
+          <select class="fsel" id="srv" style="padding-top:1.9rem">
+            <option value="" disabled selected></option>
+            <option>Implante Dentário</option>
+            <option>Facetas &amp; Lentes de Contato</option>
+            <option>Invisalign</option>
+            <option>Reabilitação Oral</option>
+            <option>Periodontia</option>
+            <option>Prótese Cerâmica</option>
+            <option>Outro</option>
+          </select>
+          <label class="fl" style="top:.5rem;font-size:.52rem;color:rgba(255,255,255,.5)">Serviço de interesse</label>
+        </div>
+      </div>
+      <div class="frow">
+        <div class="fg full"><textarea class="fta" id="msg" placeholder=" "></textarea><label class="fl" for="msg">Mensagem (opcional)</label></div>
+      </div>
+      <div class="fsubrow"><button type="submit" class="fsub">Enviar solicitação</button></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <span class="ft-brand">Santeliê &middot; Dr. Leonardo Ortigoza</span>
+  <span class="ft-copy">&copy; 2025 &middot; Todos os direitos reservados</span>
+  <span class="ft-cro">CRO/PE 11.348</span>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('s',window.scrollY>60);
+    var hg=document.getElementById('hg');
+    if(hg)hg.style.transform='translate(-50%,calc(-50% + '+window.scrollY*.25+'px))';
+  });
+
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')});
+  },{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+
+  document.querySelectorAll('.fil').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.fil').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on');
+    });
+  });
+})();
+
+function send(e){
+  e.preventDefault();
+  var n=document.getElementById('nome').value;
+  var t=document.getElementById('tel').value;
+  var s=document.getElementById('srv').value;
+  var m=document.getElementById('msg').value;
+  var txt='Olá, Dr. Leonardo! Gostaria de agendar uma consulta.\n\nNome: '+n+'\nTelefone: '+t+(s?'\nServiço: '+s:'')+(m?'\nMensagem: '+m:'');
+  window.open('https://wa.me/5581988421313?text='+encodeURIComponent(txt),'_blank');
+}
+</script>
+</body>
+</html>
