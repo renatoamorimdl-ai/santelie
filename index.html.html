@@ -77,15 +77,15 @@ nav.s{padding:1.2rem 5%;background:rgba(12,12,12,.95);backdrop-filter:blur(8px)}
 .srv-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,3.5vw,4.5rem);font-weight:300;line-height:1.1;letter-spacing:-.01em}
 .srv-h2 em{font-style:italic}
 .srv-list{border-top:1px solid rgba(0,0,0,.1)}
-.srv-row{display:grid;grid-template-columns:3.5rem 1fr 2fr 2rem;gap:2rem;align-items:center;padding:2.4rem 0;border-bottom:1px solid rgba(0,0,0,.07);cursor:default;position:relative;overflow:hidden}
+.srv-row{display:grid;grid-template-columns:3.5rem 1fr 2fr;gap:2rem;align-items:center;padding:2.4rem 0;border-bottom:1px solid rgba(0,0,0,.07);cursor:default;position:relative;overflow:hidden}
 .srv-row::after{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:var(--lightbg);transition:width .4s var(--ease);z-index:0}
 .srv-row:hover::after{width:100%}
 .srv-row>*{position:relative;z-index:1}
 .srv-num{font-size:.75rem;letter-spacing:.15em;color:#bbb;font-weight:300}
-.srv-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400}
+.srv-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;text-align:left}
 .srv-desc{font-size:.9rem;line-height:1.8;color:#666;font-weight:300}
-.srv-arr{color:#bbb;font-size:1.1rem;transition:transform .3s,color .3s;text-align:right}
-.srv-row:hover .srv-arr{transform:translateX(5px);color:#0c0c0c}
+.srv-arr{display:none}
+.srv-row:hover .srv-arr{display:none}
 
 /* ESPAÇO */
 #espaco{background:#0c0c0c;padding:9rem 5%}
@@ -186,12 +186,11 @@ footer{background:#0c0c0c;border-top:1px solid rgba(255,255,255,.08);padding:2.5
   .dif-head{grid-template-columns:1fr;gap:1.5rem}
   .dif-grid{grid-template-columns:1fr 1fr}
   #especialidades{padding:6rem 5%}
-  .srv-row{display:flex;flex-direction:column;gap:.5rem;padding:1.8rem 0}
-  .srv-row-top{display:flex;align-items:center;gap:1rem}
-  .srv-num{flex-shrink:0;min-width:2.5rem}
-  .srv-name{flex:1}
-  .srv-arr{flex-shrink:0}
-  .srv-desc{display:block;font-size:.84rem;color:#666;font-weight:300;line-height:1.75;padding-left:3.5rem}
+  .srv-row{display:block;padding:1.6rem 0}
+  .srv-num{display:inline;font-size:.78rem;letter-spacing:.12em;color:#bbb;margin-right:.6rem}
+  .srv-name{display:inline;font-size:1.45rem;white-space:normal}
+  .srv-arr{display:none}
+  .srv-desc{display:block;font-size:.84rem;color:#666;font-weight:300;line-height:1.75;margin-top:.4rem}
   #espaco{padding:6rem 5%}
   .espaco-grid{grid-template-columns:1fr 1fr}
   .espaco-item.wide{grid-column:span 2;aspect-ratio:16/7}
@@ -305,15 +304,15 @@ footer{background:#0c0c0c;border-top:1px solid rgba(255,255,255,.08);padding:2.5
     <h2 class="srv-h2">O que<br><em>transformamos</em></h2>
   </div>
   <div class="srv-list">
-    <div class="srv-row rv"><div class="srv-row-top"><span class="srv-num">01</span><span class="srv-name">Implantes dentários</span><span class="srv-arr">&#8594;</span></div><span class="srv-desc">Reposição definitiva com osseointegração de alta precisão. Protocolos imediatos disponíveis.</span></div>
-    <div class="srv-row rv d1"><div class="srv-row-top"><span class="srv-num">02</span><span class="srv-name">Facetas e lentes de contato</span><span class="srv-arr">&#8594;</span></div><span class="srv-desc">Cerâmicas ultrafinas que transformam a estética com preservação máxima do dente natural.</span></div>
-    <div class="srv-row rv d2"><div class="srv-row-top"><span class="srv-num">03</span><span class="srv-name">Invisalign</span><span class="srv-arr">&#8594;</span></div><span class="srv-desc">Alinhamento ortodôntico discreto com alinhadores transparentes personalizados digitalmente.</span></div>
-    <div class="srv-row rv"><div class="srv-row-top"><span class="srv-num">04</span><span class="srv-name">Reabilitação oral total</span><span class="srv-arr">&#8594;</span></div><span class="srv-desc">Reconstrução completa da função mastigatória e estética para casos complexos.</span></div>
-    <div class="srv-row rv d1"><div class="srv-row-top"><span class="srv-num">05</span><span class="srv-name">Periodontia</span><span class="srv-arr">&#8594;</span></div><span class="srv-desc">Tratamento e prevenção de doenças periodontais — a base que sustenta qualquer resultado estético.</span></div>
-    <div class="srv-row rv d2"><div class="srv-row-top"><span class="srv-num">06</span><span class="srv-name">Harmonização facial</span><span class="srv-arr">&#8594;</span></div><span class="srv-desc">Procedimentos estéticos que harmonizam e realçam a beleza natural do rosto.</span></div>
-    <div class="srv-row rv"><div class="srv-row-top"><span class="srv-num">07</span><span class="srv-name">Próteses cerâmicas</span><span class="srv-arr">&#8594;</span></div><span class="srv-desc">Coroas e próteses produzidas no laboratório in-house com precisão e agilidade.</span></div>
+    <div class="srv-row rv"><span class="srv-num">01</span><span class="srv-name">Implantes dentários</span><span class="srv-desc">Reposição definitiva com osseointegração de alta precisão. Protocolos imediatos disponíveis.</span></div>
+    <div class="srv-row rv d1"><span class="srv-num">02</span><span class="srv-name">Facetas e lentes de contato</span><span class="srv-desc">Cerâmicas ultrafinas que transformam a estética com preservação máxima do dente natural.</span></div>
+    <div class="srv-row rv d2"><span class="srv-num">03</span><span class="srv-name">Invisalign</span><span class="srv-desc">Alinhamento ortodôntico discreto com alinhadores transparentes personalizados digitalmente.</span></div>
+    <div class="srv-row rv"><span class="srv-num">04</span><span class="srv-name">Reabilitação oral total</span><span class="srv-desc">Reconstrução completa da função mastigatória e estética para casos complexos.</span></div>
+    <div class="srv-row rv d1"><span class="srv-num">05</span><span class="srv-name">Periodontia</span><span class="srv-desc">Tratamento e prevenção de doenças periodontais — a base que sustenta qualquer resultado estético.</span></div>
+    <div class="srv-row rv d2"><span class="srv-num">06</span><span class="srv-name">Harmonização facial</span><span class="srv-desc">Procedimentos estéticos que harmonizam e realçam a beleza natural do rosto.</span></div>
+    <div class="srv-row rv"><span class="srv-num">07</span><span class="srv-name">Próteses cerâmicas</span><span class="srv-desc">Coroas e próteses produzidas no laboratório in-house com precisão e agilidade.</span></div>
   </div>
-</section>
+  </section>
 
 <!-- SOBRE -->
 <section id="sobre">
