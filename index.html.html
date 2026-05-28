@@ -186,8 +186,12 @@ footer{background:#0c0c0c;border-top:1px solid rgba(255,255,255,.08);padding:2.5
   .dif-head{grid-template-columns:1fr;gap:1.5rem}
   .dif-grid{grid-template-columns:1fr 1fr}
   #especialidades{padding:6rem 5%}
-  .srv-row{grid-template-columns:3rem 1fr 1.5rem;gap:1rem}
-  .srv-desc{display:none}
+  .srv-row{display:flex;flex-direction:column;gap:.5rem;padding:1.8rem 0}
+  .srv-row-top{display:flex;align-items:center;gap:1rem}
+  .srv-num{flex-shrink:0;min-width:2.5rem}
+  .srv-name{flex:1}
+  .srv-arr{flex-shrink:0}
+  .srv-desc{display:block;font-size:.84rem;color:#666;font-weight:300;line-height:1.75;padding-left:3.5rem}
   #espaco{padding:6rem 5%}
   .espaco-grid{grid-template-columns:1fr 1fr}
   .espaco-item.wide{grid-column:span 2;aspect-ratio:16/7}
@@ -301,13 +305,13 @@ footer{background:#0c0c0c;border-top:1px solid rgba(255,255,255,.08);padding:2.5
     <h2 class="srv-h2">O que<br><em>transformamos</em></h2>
   </div>
   <div class="srv-list">
-    <div class="srv-row rv"><span class="srv-num">01</span><span class="srv-name">Implantes dentários</span><span class="srv-desc">Reposição definitiva com osseointegração de alta precisão. Protocolos imediatos disponíveis.</span><span class="srv-arr">&#8594;</span></div>
-    <div class="srv-row rv d1"><span class="srv-num">02</span><span class="srv-name">Facetas e lentes de contato</span><span class="srv-desc">Cerâmicas ultrafinas que transformam a estética com preservação máxima do dente natural.</span><span class="srv-arr">&#8594;</span></div>
-    <div class="srv-row rv d2"><span class="srv-num">03</span><span class="srv-name">Invisalign</span><span class="srv-desc">Alinhamento ortodôntico discreto com alinhadores transparentes personalizados digitalmente.</span><span class="srv-arr">&#8594;</span></div>
-    <div class="srv-row rv"><span class="srv-num">04</span><span class="srv-name">Reabilitação oral total</span><span class="srv-desc">Reconstrução completa da função mastigatória e estética para casos complexos.</span><span class="srv-arr">&#8594;</span></div>
-    <div class="srv-row rv d1"><span class="srv-num">05</span><span class="srv-name">Periodontia</span><span class="srv-desc">Tratamento e prevenção de doenças periodontais — a base que sustenta qualquer resultado estético.</span><span class="srv-arr">&#8594;</span></div>
-    <div class="srv-row rv d2"><span class="srv-num">06</span><span class="srv-name">Harmonização facial</span><span class="srv-desc">Procedimentos estéticos que harmonizam e realçam a beleza natural do rosto.</span><span class="srv-arr">&#8594;</span></div>
-    <div class="srv-row rv"><span class="srv-num">07</span><span class="srv-name">Próteses cerâmicas</span><span class="srv-desc">Coroas e próteses produzidas no laboratório in-house com precisão e agilidade.</span><span class="srv-arr">&#8594;</span></div>
+    <div class="srv-row rv"><div class="srv-row-top"><span class="srv-num">01</span><span class="srv-name">Implantes dentários</span><span class="srv-arr">&#8594;</span></div><span class="srv-desc">Reposição definitiva com osseointegração de alta precisão. Protocolos imediatos disponíveis.</span></div>
+    <div class="srv-row rv d1"><div class="srv-row-top"><span class="srv-num">02</span><span class="srv-name">Facetas e lentes de contato</span><span class="srv-arr">&#8594;</span></div><span class="srv-desc">Cerâmicas ultrafinas que transformam a estética com preservação máxima do dente natural.</span></div>
+    <div class="srv-row rv d2"><div class="srv-row-top"><span class="srv-num">03</span><span class="srv-name">Invisalign</span><span class="srv-arr">&#8594;</span></div><span class="srv-desc">Alinhamento ortodôntico discreto com alinhadores transparentes personalizados digitalmente.</span></div>
+    <div class="srv-row rv"><div class="srv-row-top"><span class="srv-num">04</span><span class="srv-name">Reabilitação oral total</span><span class="srv-arr">&#8594;</span></div><span class="srv-desc">Reconstrução completa da função mastigatória e estética para casos complexos.</span></div>
+    <div class="srv-row rv d1"><div class="srv-row-top"><span class="srv-num">05</span><span class="srv-name">Periodontia</span><span class="srv-arr">&#8594;</span></div><span class="srv-desc">Tratamento e prevenção de doenças periodontais — a base que sustenta qualquer resultado estético.</span></div>
+    <div class="srv-row rv d2"><div class="srv-row-top"><span class="srv-num">06</span><span class="srv-name">Harmonização facial</span><span class="srv-arr">&#8594;</span></div><span class="srv-desc">Procedimentos estéticos que harmonizam e realçam a beleza natural do rosto.</span></div>
+    <div class="srv-row rv"><div class="srv-row-top"><span class="srv-num">07</span><span class="srv-name">Próteses cerâmicas</span><span class="srv-arr">&#8594;</span></div><span class="srv-desc">Coroas e próteses produzidas no laboratório in-house com precisão e agilidade.</span></div>
   </div>
 </section>
 
