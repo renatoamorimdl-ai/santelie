@@ -426,12 +426,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('in')});},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
   document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
 })();
+var SHEETS_WEBHOOK_URL='https://script.google.com/macros/s/AKfycbyXaFbxSMfbAZyoO-Gz0taf8wanocv9wTjZGWQKtbt_-bQotJselyqDhnqRAbZOu51t/exec';
 function send(e){
   e.preventDefault();
   var n=document.getElementById('nome').value;
   var t=document.getElementById('tel').value;
   var s=document.getElementById('srv').value;
   var m=document.getElementById('msg').value;
+
+  try{
+    fetch(SHEETS_WEBHOOK_URL,{
+      method:'POST',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body:JSON.stringify({
+        name:n||'',
+        phone:t||'',
+        service:s||'',
+        message:m||'',
+        pageUrl:window.location.href
+      }),
+      keepalive:true
+    }).catch(function(){/* falha silenciosa: nunca deve travar o WhatsApp */});
+  }catch(err){/* falha silenciosa */}
+
   var br='%0A';
   var txt='Ol%C3%A1%2C+Dr.+Leonardo%21+Gostaria+de+agendar+uma+consulta.';
   txt+=br+br+'Nome%3A+'+encodeURIComponent(n);
