@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Restaura Posteriores em Recife | 23, 24 e 25 de novembro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@500;600&display=swap" rel="stylesheet">
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,"script",
+  "https://connect.facebook.net/en_US/fbevents.js");
+  fbq("init","1318381023203889");
+  fbq("track","PageView");
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1318381023203889&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel Code -->
+  <style>
+    :root{--bg:#070807;--panel:#111210;--line:#2b2c28;--text:#f2f0ea;--muted:#a3a49f;--orange:#f4aa34;--cyan:#4ecbd0}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif}
+    a{color:inherit;text-decoration:none}
+    .shell{width:min(1160px,calc(100% - 40px));margin:auto}
+
+    /* Header */
+    .nav{height:80px;display:flex;align-items:center;justify-content:space-between;position:absolute;inset:0 0 auto;z-index:5;border-bottom:1px solid #ffffff1c}
+    .logo{font-size:20px;font-weight:600;line-height:.75}
+    .logo small{display:block;font-size:9px;text-align:right}
+    .nav-cta{font-size:12px;border-bottom:1px solid var(--orange);padding:8px 0}
+
+    /* Hero */
+    .hero{min-height:830px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 80% 30%,#273026 0,transparent 33%),linear-gradient(115deg,#050605 45%,#111510)}
+    .hero-glow{position:absolute;width:500px;height:500px;border:1px solid #f4aa342e;border-radius:50%;right:-100px;top:120px}
+    .hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:90px;align-items:center;padding-top:70px}
+    .eyebrow{font-size:11px;letter-spacing:.18em;color:var(--orange);font-weight:700;margin:0 0 22px}
+    h1,h2,h3,p{margin-top:0}
+    h1{font:500 clamp(50px,6vw,82px)/.98 Manrope,sans-serif;letter-spacing:-.055em;max-width:760px}
+    h1 em{color:var(--orange);font-style:normal}
+    .lead{font-size:18px;line-height:1.65;color:#c8cac5;max-width:650px}
+    .hero-actions{display:flex;gap:14px;margin-top:38px}
+    .primary,.secondary{min-height:56px;padding:0 24px;display:inline-flex;align-items:center;justify-content:space-between;gap:32px;font-size:13px}
+    .primary{background:var(--orange);color:#090a09;font-weight:700}
+    .secondary{border:1px solid #ffffff42}
+
+    /* Cards de evento / local / preço */
+    .event-card{border:1px solid var(--line);background:#0d0e0de8;padding:38px}
+    .event-card>span,.location-card>span,.price-card>small{font-size:10px;letter-spacing:.16em;color:var(--orange)}
+    .event-card>strong{display:block;font:500 58px/1 Manrope;margin:45px 0 8px}
+    .event-card>p{color:var(--muted)}
+    .event-card>div{border-top:1px solid var(--line);padding-top:22px;margin-top:30px}
+    .event-card b,.event-card small{display:block}
+    .event-card small{color:var(--muted);margin-top:5px}
+
+    /* Faixa de prova */
+    .proof{border-block:1px solid var(--line);background:#0b0c0b}
+    .proof-grid{min-height:125px;display:grid;grid-template-columns:repeat(4,1fr);align-items:center}
+    .proof span{padding-left:20px;border-left:1px solid var(--line);font-size:12px;color:var(--muted)}
+    .proof b{display:block;color:var(--text);margin-bottom:6px}
+
+    /* Seções */
+    .section{padding-block:110px}
+    .intro{display:grid;grid-template-columns:1.1fr .9fr;gap:100px;align-items:end}
+    .intro>p,.media-section>div>p,.teachers-grid>div>p,.location p,.offer-grid>div>p{color:var(--muted);line-height:1.75}
+    h2{font:500 clamp(40px,5vw,66px)/1.03 Manrope;letter-spacing:-.045em;margin-bottom:0}
+    .dark-panel,.teachers{background:var(--panel)}
+    .topics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .topics article{border:1px solid var(--line);padding:30px;min-height:240px}
+    .topics span{color:var(--orange);font-size:11px}
+    .topics h3{font:500 24px/1.15 Manrope;margin:55px 0 16px}
+    .topics p{color:var(--muted);font-size:14px;line-height:1.6}
+    .topics .accent-card{background:var(--orange);color:#090a09}
+    .topics .accent-card span{color:#60420f}
+    .media-section,.teachers-grid,.location,.offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:85px;align-items:center}
+
+    .location-card{border:1px solid var(--line);padding:38px;background:#101110}
+    .location-card strong,.location-card small{display:block}
+    .location-card strong{font-size:28px;margin:45px 0 10px}
+    .location-card small{color:var(--muted);line-height:1.65}
+    .map-link{display:inline-block;margin-top:24px;padding-bottom:7px;border-bottom:1px solid #f4aa34;color:#f4aa34;font-size:12px}
+
+    .offer{background:var(--orange);color:#090a09}
+    .offer .eyebrow{color:#62420d}
+    .offer-grid>div>p{color:#604918}
+    .price-card{background:#0b0c0b;color:var(--text);padding:42px}
+    .price-card p{margin:40px 0 0;color:var(--muted)}
+    .price-card>strong{font:600 clamp(45px,5vw,64px) Manrope}
+    .cash{border-top:1px solid var(--line);margin:24px 0;padding-top:22px;display:flex;justify-content:space-between}
+    .cash span{color:var(--orange)}
+    .whatsapp{width:100%}
+
+    /* Vídeo, professores */
+    .instagram-video{min-height:620px;border:1px solid var(--line);background:#0d0e0d;overflow:hidden}
+    .instagram-video iframe{width:100%;height:620px;display:block;border:0}
+    .teachers-photo{aspect-ratio:4/3;overflow:hidden;border:1px solid var(--line);background:#0d0e0d}
+    .teachers-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+    .teacher-bios{display:grid;gap:22px;margin-top:30px}
+    .teacher-bio{padding-top:20px;border-top:1px solid var(--line)}
+    .teacher-bio h3{margin:0 0 8px;font:500 22px/1.2 Manrope}
+    .teacher-bio p{margin:0;color:var(--muted);font-size:14px;line-height:1.65}
+
+    /* Rodapé e WhatsApp flutuante */
+    footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+    footer .shell{display:flex;justify-content:space-between}
+    .floating{position:fixed;right:18px;bottom:18px;background:#24d366;color:#081108;padding:14px 18px;border-radius:99px;font-size:12px;font-weight:700;z-index:10}
+
+    /* Mobile */
+    @media(max-width:760px){
+      .shell{width:calc(100% - 28px)}
+      .nav{height:70px}
+      .hero{min-height:780px;align-items:flex-end}
+      .hero-grid{grid-template-columns:1fr;gap:30px;padding:130px 0 45px}
+      .hero h1{font-size:46px}
+      .lead{font-size:16px}
+      .event-card{padding:25px}
+      .event-card>strong{font-size:44px;margin-top:25px}
+      .hero-actions{flex-direction:column}
+      .primary,.secondary{justify-content:center}
+      .proof-grid{grid-template-columns:1fr 1fr;gap:24px;padding-block:30px}
+      .section{padding-block:75px}
+      .intro,.media-section,.teachers-grid,.location,.offer-grid{grid-template-columns:1fr;gap:42px}
+      .topics{grid-template-columns:1fr}
+      .topics article{min-height:190px}
+      .topics h3{margin-top:38px}
+      .media-section>div:first-child{order:2}
+      .teachers-grid>div:first-child{order:2}
+      .price-card{padding:28px}
+      .cash{flex-direction:column;gap:8px}
+      footer .shell{flex-direction:column;gap:12px}
+      .instagram-video,.instagram-video iframe{min-height:560px;height:560px}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav shell">
+    <a href="#" class="logo" aria-label="Voltar ao site Restaura Posteriores">restaura <small>posteriores</small></a>
+    <a class="nav-cta" href="#investimento">Garantir minha vaga</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">IMERSÃO PRESENCIAL · RECIFE/PE</p>
+          <h1>Restaurações posteriores com mais <em>segurança e previsibilidade.</em></h1>
+          <p class="lead">Três dias de raciocínio clínico, demonstração e prática para transformar a execução das suas restaurações posteriores.</p>
+          <div class="hero-actions">
+            <a class="primary" href="#investimento">Quero participar <span>↗</span></a>
+            <a class="secondary" href="#programa">Conhecer a imersão</a>
+          </div>
+        </div>
+        <aside class="event-card">
+          <span>PRÓXIMA TURMA</span>
+          <strong>23, 24 e 25</strong>
+          <p>de novembro · Recife/PE</p>
+          <div><b>3 dias</b><small>Teoria + hands-on</small></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="proof">
+      <div class="shell proof-grid">
+        <span><b>Presencial</b>em Recife</span>
+        <span><b>Imersão completa</b>em 3 dias</span>
+        <span><b>Acompanhamento</b>dos professores</span>
+        <span><b>Aplicação clínica</b>na rotina</span>
+      </div>
+    </section>
+
+    <section class="section shell intro" id="programa">
+      <div>
+        <p class="eyebrow">DA DECISÃO À EXECUÇÃO</p>
+        <h2>Entenda o raciocínio antes de executar.</h2>
+      </div>
+      <p>A imersão aproxima ciência, demonstração e treino para que você compreenda cada decisão clínica e pratique protocolos aplicáveis à rotina restauradora.</p>
+    </section>
+
+    <section class="section dark-panel">
+      <div class="shell">
+        <p class="eyebrow">O QUE VOCÊ VAI APROFUNDAR</p>
+        <div class="topics">
+          <article><span>01</span><h3>Planejamento e sequência clínica</h3><p>Organização do caso e compreensão do motivo de cada etapa.</p></article>
+          <article><span>02</span><h3>Isolamento e adesão</h3><p>Estratégias aplicáveis à rotina de restaurações posteriores.</p></article>
+          <article><span>03</span><h3>Parede e contato proximal</h3><p>Matriz, contorno, adaptação e construção do ponto de contato.</p></article>
+          <article><span>04</span><h3>Margens profundas</h3><p>Raciocínio e recursos técnicos para situações mais desafiadoras.</p></article>
+          <article><span>05</span><h3>Seleção de materiais</h3><p>Critérios clínicos, propriedades e comportamento restaurador.</p></article>
+          <article class="accent-card"><span>RESULTADO</span><h3>Mais confiança para decidir e executar.</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell media-section">
+      <div class="instagram-video">
+        <iframe src="https://www.instagram.com/reel/DcOg7xjuP-V/embed/" title="Vídeo da agenda do Restaura Posteriores no Instagram" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <div>
+        <p class="eyebrow">UMA EXPERIÊNCIA COMPLETA</p>
+        <h2>Veja como será participar.</h2>
+        <p>Assista ao vídeo da agenda do Restaura Posteriores e conheça os próximos encontros da formação.</p>
+      </div>
+    </section>
+
+    <section class="section teachers">
+      <div class="shell teachers-grid">
+        <div class="teachers-photo">
+          <img src="https://www.restauraposteriores.com.br/cursos/shared/professores-ricardo-paredes-jackelyne-sousa.png" alt="Ricardo Paredes e Jackelyne Sousa durante demonstração prática de restauração posterior" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <p class="eyebrow">QUEM CONDUZ</p>
+          <h2>Ricardo Paredes e Jackelyne Sousa.</h2>
+          <p>Experiência clínica, ensino e ciência reunidos em uma formação orientada para decisões mais seguras e resultados previsíveis.</p>
+          <div class="teacher-bios">
+            <article class="teacher-bio">
+              <h3>Ricardo Paredes</h3>
+              <p>Cirurgião-dentista com 17 anos de dedicação à Odontologia Restauradora. Especialista em Dentística Restauradora pelo CPGOR Recife e mestre em Dentística pela Faculdade São Leopoldo Mandic, atua na prática clínica, no ensino e na formação de dentistas.</p>
+            </article>
+            <article class="teacher-bio">
+              <h3>Jackelyne Sousa</h3>
+              <p>Cirurgiã-dentista graduada pela Universidade de Gurupi (UNIRG), especialista pelo IOA Palmas e mestre pela Faculdade São Leopoldo Mandic. Professora e palestrante, transforma conhecimento científico em protocolos clínicos seguros, previsíveis e aplicáveis.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell location">
+      <div>
+        <p class="eyebrow">LOCAL DA IMERSÃO</p>
+        <h2>Recife, PE.</h2>
+        <p>O endereço completo e as orientações de chegada serão divulgados assim que o local for confirmado.</p>
+      </div>
+      <div class="location-card">
+        <span>23, 24 E 25 DE NOVEMBRO</span>
+        <strong>Local a confirmar</strong>
+        <small>Recife/PE</small>
+      </div>
+    </section>
+
+    <section class="section offer" id="investimento">
+      <div class="shell offer-grid">
+        <div>
+          <p class="eyebrow">INVISTA NA SUA EVOLUÇÃO CLÍNICA</p>
+          <h2>Garanta sua vaga na turma de Recife.</h2>
+          <p>Converse com nossa equipe para tirar dúvidas, consultar disponibilidade e realizar sua inscrição.</p>
+        </div>
+        <div class="price-card">
+          <small>INVESTIMENTO</small>
+          <p>6x de</p>
+          <strong>R$ 583,33</strong>
+          <div class="cash"><b>À vista: R$ 3.000</b><span>Economize R$ 500</span></div>
+          <a class="primary whatsapp" href="https://wa.me/5581996665450?text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20no%20Restaura%20Posteriores%20em%20Recife%2C%20nos%20dias%2023%2C%2024%20e%2025%20de%20novembro." target="_blank" rel="noreferrer" onclick="window.fbq&&fbq('track','Lead')">Falar com a equipe no WhatsApp <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <span>© 2026 Restaura Posteriores</span>
+    </div>
+  </footer>
+
+  <a class="floating" href="https://wa.me/5581996665450?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20o%20Restaura%20Posteriores%20em%20Recife." target="_blank" rel="noreferrer" onclick="window.fbq&&fbq('track','Lead')" aria-label="Falar no WhatsApp">WhatsApp</a>
+</body>
+</html>
