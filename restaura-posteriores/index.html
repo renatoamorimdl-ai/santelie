@@ -153,8 +153,8 @@
           <h1>Restaurações posteriores com mais <em>segurança e previsibilidade.</em></h1>
           <p class="lead">Três dias de raciocínio clínico, demonstração e prática para transformar a execução das suas restaurações posteriores.</p>
           <div class="hero-actions">
-            <a class="primary" href="#investimento">Quero participar <span>↗</span></a>
-            <a class="secondary" href="#programa">Conhecer a imersão</a>
+            <a class="primary" href="https://wa.me/5581996665450?text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20no%20Restaura%20Posteriores%20em%20Recife%2C%20nos%20dias%2023%2C%2024%20e%2025%20de%20novembro." target="_blank" rel="noreferrer" onclick="window.fbq&&fbq('track','Lead')">Quero participar <span>↗</span></a>
+            <a class="secondary" href="#programa" data-scroll="programa">Conhecer a imersão</a>
           </div>
         </div>
         <aside class="event-card">
@@ -270,5 +270,16 @@
   </footer>
 
   <a class="floating" href="https://wa.me/5581996665450?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20o%20Restaura%20Posteriores%20em%20Recife." target="_blank" rel="noreferrer" onclick="window.fbq&&fbq('track','Lead')" aria-label="Falar no WhatsApp">WhatsApp</a>
+  <script>
+    // Rolagem suave até a primeira seção sobre o curso (abaixo do hero)
+    document.querySelectorAll('[data-scroll]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        var t=document.getElementById(a.getAttribute('data-scroll'));
+        if(!t)return;
+        e.preventDefault();
+        t.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+  </script>
 </body>
 </html>
