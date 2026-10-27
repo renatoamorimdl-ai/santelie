@@ -136,6 +136,23 @@
       footer .shell{flex-direction:column;gap:12px}
       .instagram-video,.instagram-video iframe{min-height:560px;height:560px}
     }
+
+    /* Formulário de captura antes do WhatsApp */
+    .lead-modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px;background:#000000b8;backdrop-filter:blur(4px)}
+    .lead-modal.open{display:flex}
+    .lead-box{position:relative;width:min(440px,100%);background:var(--panel);border:1px solid var(--line);padding:38px 34px 30px;max-height:calc(100dvh - 40px);overflow:auto}
+    .lead-box h2{font-size:30px;line-height:1.1;letter-spacing:-.035em;margin:0 0 12px}
+    .lead-box>p{color:var(--muted);font-size:14px;line-height:1.6;margin:0 0 24px}
+    .lead-close{position:absolute;top:10px;right:12px;width:40px;height:40px;background:none;border:0;color:var(--muted);font-size:26px;line-height:1;cursor:pointer}
+    .lead-close:hover{color:var(--text)}
+    .lead-box label{display:block;font-size:11px;letter-spacing:.14em;color:var(--orange);font-weight:700;margin:0 0 8px}
+    .lead-box input{width:100%;height:54px;margin:0 0 18px;padding:0 16px;background:#0b0c0b;border:1px solid var(--line);color:var(--text);font:400 16px "DM Sans",sans-serif;border-radius:0}
+    .lead-box input:focus{outline:none;border-color:var(--orange)}
+    .lead-box input.invalid{border-color:#e5604d}
+    .lead-error{display:none;color:#e5604d;font-size:13px;margin:-8px 0 16px}
+    .lead-box button[type=submit]{width:100%;border:0;cursor:pointer;font-family:inherit;justify-content:center}
+    .lead-note{color:var(--muted);font-size:11px;line-height:1.5;margin:16px 0 0}
+    @media(max-width:760px){.lead-box{padding:34px 22px 24px}.lead-box h2{font-size:26px}}
   </style>
 </head>
 <body>
@@ -153,7 +170,7 @@
           <h1>Restaurações posteriores com mais <em>segurança e previsibilidade.</em></h1>
           <p class="lead">Três dias de raciocínio clínico, demonstração e prática para transformar a execução das suas restaurações posteriores.</p>
           <div class="hero-actions">
-            <a class="primary" href="https://wa.me/5581996665450?text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20no%20Restaura%20Posteriores%20em%20Recife%2C%20nos%20dias%2023%2C%2024%20e%2025%20de%20novembro." target="_blank" rel="noreferrer" onclick="window.fbq&&fbq('track','Lead')">Quero participar <span>↗</span></a>
+            <a class="primary" href="https://wa.me/5581996665450?text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20no%20Restaura%20Posteriores%20em%20Recife%2C%20nos%20dias%2023%2C%2024%20e%2025%20de%20novembro." target="_blank" rel="noreferrer" data-lead="quero-participar">Quero participar <span>↗</span></a>
             <a class="secondary" href="#programa" data-scroll="programa">Conhecer a imersão</a>
           </div>
         </div>
@@ -257,7 +274,7 @@
           <p>6x de</p>
           <strong>R$ 583,33</strong>
           <div class="cash"><b>À vista: R$ 3.000</b><span>Economize R$ 500</span></div>
-          <a class="primary whatsapp" href="https://wa.me/5581996665450?text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20no%20Restaura%20Posteriores%20em%20Recife%2C%20nos%20dias%2023%2C%2024%20e%2025%20de%20novembro." target="_blank" rel="noreferrer" onclick="window.fbq&&fbq('track','Lead')">Falar com a equipe no WhatsApp <span>↗</span></a>
+          <a class="primary whatsapp" href="https://wa.me/5581996665450?text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20no%20Restaura%20Posteriores%20em%20Recife%2C%20nos%20dias%2023%2C%2024%20e%2025%20de%20novembro." target="_blank" rel="noreferrer" data-lead="falar-com-equipe">Falar com a equipe no WhatsApp <span>↗</span></a>
         </div>
       </div>
     </section>
@@ -269,7 +286,7 @@
     </div>
   </footer>
 
-  <a class="floating" href="https://wa.me/5581996665450?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20o%20Restaura%20Posteriores%20em%20Recife." target="_blank" rel="noreferrer" onclick="window.fbq&&fbq('track','Lead')" aria-label="Falar no WhatsApp">WhatsApp</a>
+  <a class="floating" href="https://wa.me/5581996665450?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20o%20Restaura%20Posteriores%20em%20Recife." target="_blank" rel="noreferrer" data-lead="whatsapp-flutuante" aria-label="Falar no WhatsApp">WhatsApp</a>
   <script>
     // Rolagem suave até a primeira seção sobre o curso (abaixo do hero)
     document.querySelectorAll('[data-scroll]').forEach(function(a){
@@ -280,6 +297,125 @@
         t.scrollIntoView({behavior:'smooth',block:'start'});
       });
     });
+  </script>
+
+  <div class="lead-modal" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="leadTitle" hidden>
+    <div class="lead-box">
+      <button type="button" class="lead-close" aria-label="Fechar" data-lead-close>&times;</button>
+      <h2 id="leadTitle">Falar com a equipe no WhatsApp</h2>
+      <p>Confirme seus dados e continue a conversa com a nossa equipe sobre a turma de Recife.</p>
+      <form id="leadForm" novalidate>
+        <label for="leadName">NOME</label>
+        <input id="leadName" name="name" type="text" autocomplete="name" placeholder="Seu nome" required>
+        <label for="leadPhone">WHATSAPP</label>
+        <input id="leadPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(81) 99999-9999" required>
+        <div class="lead-error" id="leadError" role="alert"></div>
+        <button type="submit" class="primary">Continuar no WhatsApp <span>↗</span></button>
+      </form>
+      <p class="lead-note">Ao continuar, você será direcionado ao WhatsApp. Usamos seus dados apenas para falar com você sobre o curso.</p>
+    </div>
+  </div>
+  <script>
+    // ===== Formulário de lead -> WhatsApp (um evento do pixel por botão) =====
+    (function(){
+      var PIXEL_ID='1318381023203889';
+      var WA_NUMBER='5581996665450';
+      // Cada botão tem a sua mensagem de WhatsApp e o seu evento no pixel do Meta.
+      var BUTTONS={
+        'quero-participar':{
+          event:'Lead_QueroParticipar',
+          text:function(n){return 'Olá! Meu nome é '+n+'. Vi a página do Restaura Posteriores e quero participar da imersão em Recife, nos dias 23, 24 e 25 de novembro. Pode me passar mais informações?';}
+        },
+        'falar-com-equipe':{
+          event:'Lead_FalarComEquipe',
+          text:function(n){return 'Olá! Sou '+n+'. Quero garantir minha vaga no Restaura Posteriores em Recife (23, 24 e 25 de novembro). Como faço a inscrição?';}
+        },
+        'whatsapp-flutuante':{
+          event:'Lead_WhatsAppFlutuante',
+          text:function(n){return 'Olá! Aqui é '+n+'. Tenho dúvidas sobre o Restaura Posteriores em Recife. Podem me ajudar?';}
+        }
+      };
+      var modal=document.getElementById('leadModal');
+      var form=document.getElementById('leadForm');
+      var nameEl=document.getElementById('leadName');
+      var phoneEl=document.getElementById('leadPhone');
+      var errEl=document.getElementById('leadError');
+      var current=null, lastFocus=null;
+
+      function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){}return '';}
+      function digits(v){return (v||'').replace(/\D/g,'');}
+      function maskPhone(v){
+        var d=digits(v).slice(0,11), out='';
+        if(d.length>0)out='('+d.slice(0,2);
+        if(d.length>=3)out+=') '+d.slice(2,d.length>10?7:6);
+        if(d.length>(d.length>10?7:6))out+='-'+d.slice(d.length>10?7:6);
+        return out;
+      }
+      function track(){ if(window.fbq){ try{ fbq.apply(null,arguments);}catch(e){} } }
+
+      function openModal(key,trigger){
+        current=key; lastFocus=trigger||null;
+        nameEl.value=store('rp_name')||nameEl.value;
+        phoneEl.value=store('rp_phone')||phoneEl.value;
+        errEl.style.display='none';
+        nameEl.classList.remove('invalid'); phoneEl.classList.remove('invalid');
+        modal.hidden=false; modal.classList.add('open');
+        document.body.style.overflow='hidden';
+        setTimeout(function(){(nameEl.value?phoneEl:nameEl).focus();},50);
+      }
+      function closeModal(){
+        modal.classList.remove('open'); modal.hidden=true;
+        document.body.style.overflow='';
+        if(lastFocus&&lastFocus.focus)lastFocus.focus();
+      }
+
+      document.querySelectorAll('[data-lead]').forEach(function(a){
+        a.addEventListener('click',function(e){
+          if(!BUTTONS[a.getAttribute('data-lead')])return;
+          e.preventDefault();
+          openModal(a.getAttribute('data-lead'),a);
+        });
+      });
+      modal.addEventListener('click',function(e){
+        if(e.target===modal||e.target.hasAttribute('data-lead-close'))closeModal();
+      });
+      document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))closeModal();});
+      phoneEl.addEventListener('input',function(){phoneEl.value=maskPhone(phoneEl.value);});
+
+      form.addEventListener('submit',function(e){
+        e.preventDefault();
+        var name=nameEl.value.trim().replace(/\s+/g,' ');
+        var ph=digits(phoneEl.value);
+        var bad=[];
+        if(name.length<2){bad.push(nameEl);}
+        if(ph.length<10||ph.length>11){bad.push(phoneEl);}
+        nameEl.classList.toggle('invalid',bad.indexOf(nameEl)>-1);
+        phoneEl.classList.toggle('invalid',bad.indexOf(phoneEl)>-1);
+        if(bad.length){
+          errEl.textContent=bad.indexOf(nameEl)>-1?'Informe seu nome.':'Informe seu WhatsApp com DDD, por exemplo (81) 99999-9999.';
+          errEl.style.display='block'; bad[0].focus(); return;
+        }
+        var cfg=BUTTONS[current]; if(!cfg)return;
+        store('rp_name',name); store('rp_phone',phoneEl.value);
+
+        // Pixel: dados do lead (hash automático pelo Meta) + 1 evento padrão + 1 evento por botão
+        var first=name.split(' ')[0].toLowerCase();
+        var rest=name.split(' ').slice(1).join(' ').toLowerCase();
+        var user={fn:first,ph:'55'+ph,country:'br'}; if(rest)user.ln=rest;
+        track('init',PIXEL_ID,user);
+        var params={content_name:'Restaura Posteriores Recife',lead_source:current};
+        track('track','Lead',params);
+        track('trackCustom',cfg.event,params);
+
+        var url='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(cfg.text(name));
+        closeModal();
+        // pequeno atraso para o pixel enviar os eventos antes de sair da página
+        setTimeout(function(){
+          var w=window.open(url,'_blank');
+          if(!w)window.location.href=url;
+        },250);
+      });
+    })();
   </script>
 </body>
 </html>
