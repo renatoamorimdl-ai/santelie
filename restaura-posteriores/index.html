@@ -309,6 +309,7 @@
         <input id="leadName" name="name" type="text" autocomplete="name" placeholder="Seu nome" required>
         <label for="leadPhone">WHATSAPP</label>
         <input id="leadPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(81) 99999-9999" required>
+        <input type="text" name="website" id="leadWebsite" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <div class="lead-error" id="leadError" role="alert"></div>
         <button type="submit" class="primary">Continuar no WhatsApp <span>↗</span></button>
       </form>
@@ -320,6 +321,8 @@
     (function(){
       var PIXEL_ID='1318381023203889';
       var WA_NUMBER='5581996665450';
+      // Endereço do Google Apps Script que grava na planilha de leads (vazio = não envia)
+      var SHEET_ENDPOINT='';
       // Cada botão tem a sua mensagem de WhatsApp e o seu evento no pixel do Meta.
       var BUTTONS={
         'quero-participar':{
@@ -406,6 +409,18 @@
         var params={content_name:'Restaura Posteriores Recife',lead_source:current};
         track('track','Lead',params);
         track('trackCustom',cfg.event,params);
+
+        // Envia o lead para a planilha (não bloqueia nem impede o WhatsApp se falhar)
+        if(SHEET_ENDPOINT && !document.getElementById('leadWebsite').value){
+          try{
+            var qs=new URLSearchParams(window.location.search);
+            var body=new URLSearchParams({
+              nome:name, whatsapp:'55'+ph, botao:current, evento:cfg.event, pagina:window.location.href.split('?')[0]
+            });
+            ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(function(k){body.set(k,qs.get(k)||'');});
+            fetch(SHEET_ENDPOINT,{method:'POST',mode:'no-cors',body:body,keepalive:true}).catch(function(){});
+          }catch(e){}
+        }
 
         var url='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(cfg.text(name));
         closeModal();
