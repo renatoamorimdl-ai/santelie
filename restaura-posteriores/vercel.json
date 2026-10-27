@@ -1,0 +1,6 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/restaura-posteriores/:path*", "destination": "/:path*" }
+  ]
+}

@@ -7,21 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@500;600&display=swap" rel="stylesheet">
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window,document,"script",
-  "https://connect.facebook.net/en_US/fbevents.js");
-  fbq("init","1318381023203889");
-  fbq("track","PageView");
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1318381023203889&ev=PageView&noscript=1"/></noscript>
-  <!-- End Meta Pixel Code -->
+  <!-- Pixel do Meta: colar aqui o código do NOVO pixel deste domínio (não usar o pixel do site da clínica) -->
   <style>
     :root{--bg:#070807;--panel:#111210;--line:#2b2c28;--text:#f2f0ea;--muted:#a3a49f;--orange:#f4aa34;--cyan:#4ecbd0}
     *{box-sizing:border-box}
@@ -319,7 +305,7 @@
   <script>
     // ===== Formulário de lead -> WhatsApp (um evento do pixel por botão) =====
     (function(){
-      var PIXEL_ID='1318381023203889';
+      var PIXEL_ID='';
       var WA_NUMBER='5581996665450';
       // Endereço do Google Apps Script que grava na planilha de leads (vazio = não envia)
       var SHEET_ENDPOINT='https://script.google.com/macros/s/AKfycbwLMVcIHwMOKjsy9Co1x--pVPIAz6jE21UQRnn0Xt3d0PayN2SrdjVZ6u2ZCYD37Sczrg/exec';
