@@ -405,7 +405,7 @@
         var first=name.split(' ')[0].toLowerCase();
         var rest=name.split(' ').slice(1).join(' ').toLowerCase();
         var user={fn:first,ph:'55'+ph,country:'br'}; if(rest)user.ln=rest;
-        track('init',PIXEL_ID,user);
+        // (sem re-init: chamar fbq('init') de novo antes dos eventos faz o pixel descartá-los)
         var params={content_name:'Restaura Posteriores Recife',lead_source:current};
         track('track','Lead',params);
         track('trackCustom',cfg.event,params);
