@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/restaura-posteriores", "destination": "https://restaura-posteriores.vercel.app/restaura-posteriores", "permanent": false },
+    { "source": "/restaura-posteriores/", "destination": "https://restaura-posteriores.vercel.app/restaura-posteriores", "permanent": false }
+  ]
+}
